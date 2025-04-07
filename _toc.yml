@@ -41,24 +41,23 @@ chapters:
   - file: "Unidades/Unidad_4/Tarea 1"
   - file: "Unidades/Unidad_4/HilosJavaBasico"
   - file: "Unidades/Unidad_4/Tarea 2"
-  #- file: "Unidades/Unidad_4/Hilos2"
+  - file: "Unidades/Unidad_4/Hilos2"
 #  #- file: "Unidades/Unidad_5/HilosPython2.0"
-#  - file: Unidad5
+- file: Unidad5
+  sections:
+   - file: "Unidades/Unidad_5/SocketsBasicoPython"
+   - file: "Unidades/Unidad_5/SocketsServerPython"
+   - file: "Unidades/Unidad_5/SocketsClientePython"
+   - file: "Unidades/Unidad_5/SocketsServerJava"
+   - file: "Unidades/Unidad_5/SocketsClienteJava"  
+   - file: "Unidades/Unidad_5/GPTChatServer"  
+   - file: "Unidades/Unidad_5/GPTChatClient"
+   - file: "Unidades/Unidad_5/Tarea Unidad 5"
 
-#  sections:
-#  - file: "Unidades/Unidad_5/SocketsBasicoPython"
-#  - file: "Unidades/Unidad_5/SocketsServerPython"
-#  - file: "Unidades/Unidad_5/SocketsClientePython"
-#  - file: "Unidades/Unidad_5/SocketsServerJava"
-#  - file: "Unidades/Unidad_5/SocketsClienteJava"  
-#  - file: "Unidades/Unidad_5/GPTChatServer"  
-#  - file: "Unidades/Unidad_5/GPTChatClient"
-#  - file: "Unidades/Unidad_5/Tarea Unidad 5"
+- file: Unidad6
 
-#- file: Unidad6
-
-#- file: Unidad6_5
-#  sections:
+- file: Unidad6_5
+  #sections:
 #    - file: "Unidades/Unidad_6/Evaluemos_lo_aprendido"
 
 #- file: Unidad7
