@@ -241,9 +241,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Ejercicio.html">Ejercicio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Ley_de_Amdahl_Gustafson_Ejercicio.html">Ley de Amdahl y Gustafson</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Precisión Simple Vs Precisión Doble y TFlops</a></li>
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="Metricas%20programas%20paralelos.html">Medidas de desempeño</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Recursos%20Extra.html">Recursos Extra</a></li>
 </ul>
@@ -462,27 +459,31 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Precisión Simple Vs Precisión Doble y TFlops</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-simple">Conversión de números en punto flotante a binario: Precisión simple</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-doble">Conversión de números en punto flotante a binario: Precisión doble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-tflops">Cálculo de Teraflops (TFlops)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-la-arquitectura-de-la-cpu-gpu">1. Identificar la arquitectura de la CPU/GPU</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinar-el-numero-de-operaciones-por-ciclo">3. Determinar el número de operaciones por ciclo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-los-teraflops">4. Calcular los teraflops</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-tflops">Cálculo de Teraflops (TFlops)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-la-arquitectura-de-la-cpu-gpu">1. Identificar la arquitectura de la CPU/GPU</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinar-el-numero-de-operaciones-por-ciclo">3. Determinar el número de operaciones por ciclo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-los-teraflops">4. Calcular los teraflops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-en-mi-pc">Cálculo de Teraflops en mi PC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-intel-core-i7-8750h">CPU (Intel Core i7-8750H)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-nvidia-gtx-1070-max-q">GPU (NVIDIA GTX 1070 Max-Q)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#donde">Donde:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-paso-a-paso">Cálculo paso a paso:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numero-de-nucleos">1. <strong>Número de núcleos</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frecuencia-del-nucleo">2. <strong>Frecuencia del núcleo</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-por-ciclo">3. <strong>Operaciones por ciclo</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-calculo-para-fp32">Ejemplo de cálculo para FP32:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-en-mi-pc">Cálculo de Teraflops en mi PC</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-intel-core-i7-8750h">CPU (Intel Core i7-8750H)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-nvidia-gtx-1070-max-q">GPU (NVIDIA GTX 1070 Max-Q)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-flops-estimados-cpu-gpu">Total FLOPS estimados (CPU + GPU):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-flops-estimados-cpu-gpu">Total FLOPS estimados (CPU + GPU):</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#realmente-esta-bien-calculado">¿Realmente está bien calculado?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#realmente-esta-bien-calculado">¿Realmente está bien calculado?</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -624,9 +625,8 @@
 <p><a href="https://www.zator.com/Cpp/E2_2_4a1.htm" target="_blank">Calculadora precisión simple y doble</a></p>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="calculo-de-teraflops-tflops">
-<h1>Cálculo de Teraflops (TFlops)<a class="headerlink" href="#calculo-de-teraflops-tflops" title="Link to this heading">#</a></h1>
+<section id="calculo-de-teraflops-tflops">
+<h2>Cálculo de Teraflops (TFlops)<a class="headerlink" href="#calculo-de-teraflops-tflops" title="Link to this heading">#</a></h2>
 <p>Los <strong>FLOPS</strong> (Floating Point Operations Per Second) son una medida del rendimiento de una computadora, y te permiten evaluar la capacidad de procesamiento de operaciones de punto flotante. Para calcular los FLOPS teóricos de una computadora portátil, generalmente puedes seguir los siguientes pasos, dependiendo de los componentes principales de la misma, especialmente la CPU y la GPU:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -634,19 +634,19 @@
 <img src="../../_static/images/U2_39.jpg"/>
 </div>
 </details><section id="identificar-la-arquitectura-de-la-cpu-gpu">
-<h2>1. Identificar la arquitectura de la CPU/GPU<a class="headerlink" href="#identificar-la-arquitectura-de-la-cpu-gpu" title="Link to this heading">#</a></h2>
+<h3>1. Identificar la arquitectura de la CPU/GPU<a class="headerlink" href="#identificar-la-arquitectura-de-la-cpu-gpu" title="Link to this heading">#</a></h3>
 <p>Cada procesador tiene una arquitectura específica (por ejemplo, x86, ARM, etc.), lo que afecta la cantidad de operaciones que puede realizar en un ciclo de reloj.</p>
 </section>
 <section id="conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">
-<h2>2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)<a class="headerlink" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz" title="Link to this heading">#</a></h2>
+<h3>2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)<a class="headerlink" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz" title="Link to this heading">#</a></h3>
 <p>Debes conocer cuántos núcleos físicos y lógicos tiene el procesador, así como su frecuencia de reloj. Puedes obtener esta información con programas como <strong>CPU-Z</strong> o con herramientas integradas en el sistema operativo (por ejemplo, en Windows mediante el «Administrador de tareas»).</p>
 </section>
 <section id="determinar-el-numero-de-operaciones-por-ciclo">
-<h2>3. Determinar el número de operaciones por ciclo<a class="headerlink" href="#determinar-el-numero-de-operaciones-por-ciclo" title="Link to this heading">#</a></h2>
+<h3>3. Determinar el número de operaciones por ciclo<a class="headerlink" href="#determinar-el-numero-de-operaciones-por-ciclo" title="Link to this heading">#</a></h3>
 <p>Para esto, necesitas saber cuántas operaciones de punto flotante puede realizar el procesador por ciclo de reloj en cada núcleo. Esto dependerá de la arquitectura del procesador y si soporta instrucciones vectoriales avanzadas como AVX o AVX-512.</p>
 </section>
 <section id="calcular-los-teraflops">
-<h2>4. Calcular los teraflops<a class="headerlink" href="#calcular-los-teraflops" title="Link to this heading">#</a></h2>
+<h3>4. Calcular los teraflops<a class="headerlink" href="#calcular-los-teraflops" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 \text{Tflops} = \frac{{\text{Frecuencia de reloj de la CPU} \times \text{Número de núcleos de la CPU} \times \text{Cantidad de operaciones por ciclo de reloj}}}{{10^{12}}}
@@ -678,20 +678,20 @@
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solución Ejemplo 2</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p class="sd-card-text">Celular 2 GHz * 4 núcleos * 4/2 operaciones por ciclo = 0.016 TFlops</p></li>
-<li><p class="sd-card-text">Xbox 2 GHz * 4 núcleos * 6 operaciones por ciclo = 0.048 TFlops</p></li>
-<li><p class="sd-card-text">Computador 2 GHz * 4 núcleos * 8/2 operaciones por ciclo = 0.032 Tflops</p></li>
+<li><p class="sd-card-text">Celular [2 GHz * 4 núcleos * (4*2 operaciones por ciclo)]/ (10^12) = 0.064 TFlops</p></li>
+<li><p class="sd-card-text">Xbox [2 GHz * 4 núcleos * 6 operaciones por ciclo]/ (10^12) = 0.048 TFlops</p></li>
+<li><p class="sd-card-text">Computador [2 GHz * 4 núcleos * (8*2 operaciones por ciclo)]/ (10^12) = 0.128 Tflops</p></li>
 </ul>
 </div>
 </details></section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="calculo-de-teraflops-en-mi-pc">
-<h1>Cálculo de Teraflops en mi PC<a class="headerlink" href="#calculo-de-teraflops-en-mi-pc" title="Link to this heading">#</a></h1>
+<section id="calculo-de-teraflops-en-mi-pc">
+<h2>Cálculo de Teraflops en mi PC<a class="headerlink" href="#calculo-de-teraflops-en-mi-pc" title="Link to this heading">#</a></h2>
 <p>Vamos a calcular teóricamente los teraflops de una computadora portatil, usemos como ejemplo la siguiente computadora:</p>
 <p><a href="https://es.msi.com/Laptop/GS65-Stealth-Thin-8RF/Specification" target="_blank">Computador portátil MSI GS65 Stealth Thin 8RF </a></p>
 <p>Para calcular los FLOPS de la <strong>MSI GS65 Stealth Thin 8RF</strong>, necesitamos considerar tanto la CPU como la GPU.</p>
 <section id="cpu-intel-core-i7-8750h">
-<h2>CPU (Intel Core i7-8750H)<a class="headerlink" href="#cpu-intel-core-i7-8750h" title="Link to this heading">#</a></h2>
+<h3>CPU (Intel Core i7-8750H)<a class="headerlink" href="#cpu-intel-core-i7-8750h" title="Link to this heading">#</a></h3>
 <p>La laptop utiliza un procesador <strong>Intel Core i7-8750H</strong> que tiene 6 núcleos y 12 hilos, con una frecuencia base de 2.2 GHz y un turbo de hasta 4.1 GHz. Este procesador es capaz de realizar varias operaciones de punto flotante por ciclo, gracias a tecnologías como <strong>AVX</strong>.</p>
 <p>Usaremos la frecuencia turbo de 4.1 GHz para el cálculo:</p>
 <ul class="simple">
@@ -705,24 +705,56 @@
 </div>
 </section>
 <section id="gpu-nvidia-gtx-1070-max-q">
-<h2>GPU (NVIDIA GTX 1070 Max-Q)<a class="headerlink" href="#gpu-nvidia-gtx-1070-max-q" title="Link to this heading">#</a></h2>
-<p>La <strong>GTX 1070 Max-Q</strong> es capaz de ofrecer hasta 6.5 teraflops de rendimiento en operaciones de punto flotante simples (FP32). Esta GPU tiene 2048 núcleos CUDA funcionando a una frecuencia de hasta 1468 MHz en modo boost.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FLOPS_GPU</span> <span class="o">=</span> <span class="mf">6.5</span> <span class="n">TFLOPS</span> <span class="o">=</span> <span class="mi">6500</span> <span class="n">GFLOPS</span>
+<h3>GPU (NVIDIA GTX 1070 Max-Q)<a class="headerlink" href="#gpu-nvidia-gtx-1070-max-q" title="Link to this heading">#</a></h3>
+<p>Para calcular los FLOPS (Floating Point Operations Per Second) de una GPU, puedes seguir una fórmula similar a la que se utiliza para calcular los FLOPS en una CPU, pero con algunos ajustes específicos para las GPUs, ya que suelen tener múltiples núcleos (shaders o CUDA cores en el caso de NVIDIA, o Stream Processors en AMD) y pueden ejecutar varias operaciones de punto flotante simultáneamente.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FLOPS = Número de núcleos × Frecuencia del núcleo (en GHz) × Operaciones por ciclo
+</pre></div>
+</div>
+<section id="donde">
+<h4>Donde:<a class="headerlink" href="#donde" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Número de núcleos</strong>: Es el número de núcleos de procesamiento en la GPU. Estos son los llamados CUDA cores (NVIDIA) o Stream Processors (AMD).</p></li>
+<li><p><strong>Frecuencia del núcleo</strong>: La velocidad del reloj a la que operan los núcleos de la GPU. Esta se suele medir en GHz (1 GHz = 10⁹ ciclos por segundo).</p></li>
+<li><p><strong>Operaciones por ciclo</strong>: Cuántas operaciones de punto flotante puede realizar un núcleo en un ciclo de reloj. Esto depende del tipo de operaciones que realiza la GPU y si son de 32 bits (FP32) o de 64 bits (FP64). La mayoría de las GPUs realizan dos operaciones de coma flotante por ciclo en FP32.</p></li>
+</ul>
+</section>
+<section id="calculo-paso-a-paso">
+<h4>Cálculo paso a paso:<a class="headerlink" href="#calculo-paso-a-paso" title="Link to this heading">#</a></h4>
+</section>
+<section id="numero-de-nucleos">
+<h4>1. <strong>Número de núcleos</strong>:<a class="headerlink" href="#numero-de-nucleos" title="Link to this heading">#</a></h4>
+<p>Por ejemplo, una GPU NVIDIA GTX 1070 tiene <strong>2,048 CUDA cores</strong>.</p>
+</section>
+<section id="frecuencia-del-nucleo">
+<h4>2. <strong>Frecuencia del núcleo</strong>:<a class="headerlink" href="#frecuencia-del-nucleo" title="Link to this heading">#</a></h4>
+<p>Supongamos que la GPU tiene una <strong>frecuencia de 1.215 GHz</strong>.</p>
+</section>
+<section id="operaciones-por-ciclo">
+<h4>3. <strong>Operaciones por ciclo</strong>:<a class="headerlink" href="#operaciones-por-ciclo" title="Link to this heading">#</a></h4>
+<p>En el caso de operaciones de punto flotante de 32 bits (FP32), cada núcleo puede realizar <strong>dos operaciones de punto flotante por ciclo</strong>.</p>
+</section>
+<section id="ejemplo-de-calculo-para-fp32">
+<h4>Ejemplo de cálculo para FP32:<a class="headerlink" href="#ejemplo-de-calculo-para-fp32" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FLOPS (FP32) = 2,048 núcleos × 1.215 GHz × 2 operaciones por ciclo
+= 2,048 × 1.215 × 2
+= 4,976.64 GFLOPS
+= 4.976 TFLOPS
 </pre></div>
 </div>
 </section>
+</section>
 <section id="total-flops-estimados-cpu-gpu">
-<h2>Total FLOPS estimados (CPU + GPU):<a class="headerlink" href="#total-flops-estimados-cpu-gpu" title="Link to this heading">#</a></h2>
+<h3>Total FLOPS estimados (CPU + GPU):<a class="headerlink" href="#total-flops-estimados-cpu-gpu" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>CPU</strong>: 393.6 GFLOPS</p></li>
-<li><p><strong>GPU</strong>: 6500 GFLOPS</p></li>
-<li><p><strong>Total</strong>: Aproximadamente <strong>6893.6 GFLOPS</strong> (6.9 TFLOPS).</p></li>
+<li><p><strong>GPU</strong>: 4976.64 GFLOPS</p></li>
+<li><p><strong>Total</strong>: Aproximadamente <strong>5370.24 GFLOPS</strong> (5.370 TFLOPS).</p></li>
 </ul>
 <p>Este cálculo da una estimación teórica del rendimiento de la laptop en operaciones de punto flotante, tomando en cuenta tanto la CPU como la GPU.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="realmente-esta-bien-calculado">
-<h1>¿Realmente está bien calculado?<a class="headerlink" href="#realmente-esta-bien-calculado" title="Link to this heading">#</a></h1>
+<section id="realmente-esta-bien-calculado">
+<h2>¿Realmente está bien calculado?<a class="headerlink" href="#realmente-esta-bien-calculado" title="Link to this heading">#</a></h2>
 <p>Los cálculos de <strong>FLOPS</strong> generalmente se refieren a la cantidad de <strong>operaciones de punto flotante</strong> por segundo en una arquitectura de 32 bits (FP32) o 64 bits (FP64), dependiendo del tipo de cálculo que se esté realizando.</p>
 <ol class="arabic simple">
 <li><p><strong>FLOPS de CPU</strong>:
@@ -752,12 +784,18 @@
 </div>
 <p><strong>GPU: NVIDIA GTX 1070 Max-Q</strong></p>
 <p>Cálculo para FP32 (32 bits):</p>
-<ul class="simple">
-<li><p><strong>Rendimiento máximo</strong>: 6.5 TFLOPS (6500 GFLOPS) en operaciones de 32 bits (<strong>FP32</strong>).</p></li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FLOPS (FP32) = 2,048 núcleos × 1.215 GHz × 2 operaciones por ciclo
+= 2,048 × 1.215 × 2
+= 4,976.64 GFLOPS
+= 4.976 TFLOPS
+</pre></div>
+</div>
 <p>Cálculo para FP64 (64 bits):
 La mayoría de las GPUs orientadas a gráficos, como la GTX 1070 Max-Q, tienen un rendimiento mucho menor en FP64. El ratio típico para esta tarjeta es de <strong>1/32</strong> del rendimiento de FP32. Por lo tanto:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FLOPS_GPU</span><span class="o">-</span><span class="n">FP64</span> <span class="o">=</span> <span class="mi">6500</span> <span class="o">/</span> <span class="mi">32</span> <span class="o">=</span> <span class="mf">203.125</span> <span class="n">GFLOPS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FLOPS (FP64) = 2,048 núcleos × 1.215 GHz × 2/32 operaciones por ciclo
+= 2,048 × 1.215 × 0.0625
+= 155.52 GFLOPS
+= 0.155 TFLOPS
 </pre></div>
 </div>
 <p><strong>Resumen de los resultados</strong></p>
@@ -772,18 +810,19 @@ La mayoría de las GPUs orientadas a gráficos, como la GTX 1070 Max-Q, tienen u
 <tbody>
 <tr class="row-even"><td><p>FP32 (32 bits)</p></td>
 <td><p>393.6</p></td>
-<td><p>6500</p></td>
-<td><p>6893.6</p></td>
+<td><p>4,976.64</p></td>
+<td><p>5370.24</p></td>
 </tr>
 <tr class="row-odd"><td><p>FP64 (64 bits)</p></td>
 <td><p>196.8</p></td>
-<td><p>203.125</p></td>
-<td><p>399.925</p></td>
+<td><p>155.52</p></td>
+<td><p>352.32</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>De esta forma, el rendimiento máximo teórico en operaciones de punto flotante de 32 bits (FP32) es aproximadamente <strong>6893.6 GFLOPS</strong>, mientras que para operaciones de 64 bits (FP64) sería de <strong>399.925 GFLOPS</strong>.</p>
+<p>De esta forma, el rendimiento máximo teórico en operaciones de punto flotante de 32 bits (FP32) es aproximadamente <strong>5370.24 GFLOPS</strong>, mientras que para operaciones de 64 bits (FP64) sería de <strong>352.32 GFLOPS</strong>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -851,27 +890,31 @@ La mayoría de las GPUs orientadas a gráficos, como la GTX 1070 Max-Q, tienen u
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Precisión Simple Vs Precisión Doble y TFlops</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-simple">Conversión de números en punto flotante a binario: Precisión simple</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-doble">Conversión de números en punto flotante a binario: Precisión doble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-tflops">Cálculo de Teraflops (TFlops)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-la-arquitectura-de-la-cpu-gpu">1. Identificar la arquitectura de la CPU/GPU</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determinar-el-numero-de-operaciones-por-ciclo">3. Determinar el número de operaciones por ciclo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-los-teraflops">4. Calcular los teraflops</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-tflops">Cálculo de Teraflops (TFlops)</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-la-arquitectura-de-la-cpu-gpu">1. Identificar la arquitectura de la CPU/GPU</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinar-el-numero-de-operaciones-por-ciclo">3. Determinar el número de operaciones por ciclo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-los-teraflops">4. Calcular los teraflops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-en-mi-pc">Cálculo de Teraflops en mi PC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-intel-core-i7-8750h">CPU (Intel Core i7-8750H)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-nvidia-gtx-1070-max-q">GPU (NVIDIA GTX 1070 Max-Q)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#donde">Donde:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-paso-a-paso">Cálculo paso a paso:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numero-de-nucleos">1. <strong>Número de núcleos</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#frecuencia-del-nucleo">2. <strong>Frecuencia del núcleo</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-por-ciclo">3. <strong>Operaciones por ciclo</strong>:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-calculo-para-fp32">Ejemplo de cálculo para FP32:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-en-mi-pc">Cálculo de Teraflops en mi PC</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-intel-core-i7-8750h">CPU (Intel Core i7-8750H)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-nvidia-gtx-1070-max-q">GPU (NVIDIA GTX 1070 Max-Q)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-flops-estimados-cpu-gpu">Total FLOPS estimados (CPU + GPU):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-flops-estimados-cpu-gpu">Total FLOPS estimados (CPU + GPU):</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#realmente-esta-bien-calculado">¿Realmente está bien calculado?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#realmente-esta-bien-calculado">¿Realmente está bien calculado?</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
