@@ -61,24 +61,24 @@ chapters:
   #sections:
 #    - file: "Unidades/Unidad_6/Evaluemos_lo_aprendido"
 
-#- file: Unidad7
-#  sections:
-#    - file: "Unidades/Unidad_7/threadsC" 
-#    - file: "Unidades/Unidad_7/OpenMP_en_C"
+- file: Unidad7
+  sections:
+    - file: "Unidades/Unidad_7/threadsC" 
+    - file: "Unidades/Unidad_7/OpenMP_en_C"
     
-#- file: Unidad8 
-#  sections:
-#    - file: "Unidades/Unidad_8/1 - Multiprocessing"
-#    - file: "Unidades/Unidad_8/2 - Multiprocessing"
-#    - file: "Unidades/Unidad_8/3 - Multiprocessing"
-#    - file: "Unidades/Unidad_8/4 - Multiprocessing"
-#    - file: "Unidades/Unidad_8/5 - Multiprocessing"
-#    - file: "Unidades/Unidad_8/6 - Multiprocessing"
-#    - file: "Unidades/Unidad_8/7 - Multiprocessing" 
-#    - file: "Unidades/Unidad_8/8 - Multiprocessing" 
-#    - file: "Unidades/Unidad_8/9 - Multiprocessing" 
-#    - file: "Unidades/Unidad_8/10 - Multiprocessing" 
-#    - file: "Unidades/Unidad_8/Multiprocessing" 
+- file: Unidad8 
+  sections:
+    - file: "Unidades/Unidad_8/1 - Multiprocessing"
+    - file: "Unidades/Unidad_8/2 - Multiprocessing"
+    - file: "Unidades/Unidad_8/3 - Multiprocessing"
+    - file: "Unidades/Unidad_8/4 - Multiprocessing"
+    - file: "Unidades/Unidad_8/5 - Multiprocessing"
+    - file: "Unidades/Unidad_8/6 - Multiprocessing"
+    - file: "Unidades/Unidad_8/7 - Multiprocessing" 
+    - file: "Unidades/Unidad_8/8 - Multiprocessing" 
+    - file: "Unidades/Unidad_8/9 - Multiprocessing" 
+    - file: "Unidades/Unidad_8/10 - Multiprocessing" 
+    - file: "Unidades/Unidad_8/Multiprocessing" 
 #    - file: "Unidades/Unidad_8/Evaluemos_lo_aprendido"
 #    #- file: "Unidades/Unidad_8/Evaluemos_lo_aprendido"
 #    - file: "Unidades/Unidad_8/Ejercicio_imagenPython"
