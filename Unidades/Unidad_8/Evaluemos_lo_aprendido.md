@@ -6,7 +6,7 @@ El siguiente taller debe ser resuelto individualmente
 Para la entrega, debe enviar un (1) solo notebook con todos los ejercicios
 Cada celda debe contener la solución de un punto del taller. Todo debe estar debidamente comentariado y demarcado con secciones markdown.
 
-El taller debe tener el siguiente nombre: El taller debe tener el siguiente nombre: **Concurrente_Taller_OpenMP_Multiprocessing_NombreApellido_2024_01_G1**
+El taller debe tener el siguiente nombre: El taller debe tener el siguiente nombre: **Concurrente_Taller_OpenMP_Multiprocessing_NombreApellido_2025_01_G1**
 
 ::::{card-carousel} 1
 
@@ -14,7 +14,7 @@ El taller debe tener el siguiente nombre: El taller debe tener el siguiente nomb
 :margin: 3
 :class-body: text-center
 :class-header: bg-light text-center
-:link: https://github.com/BioAITeamLearning/ProgCD_2023_03_Ucaldas/blob/main/Unidades/Unidad_8/Taller-OpenMP-Multiprocessing.docx
+:link: https://github.com/BioAITeamLearning/ProgCD_2025_01_G1_Ucaldas/blob/main/Unidades/Unidad_8/Taller-OpenMP-Multiprocessing.docx
 
 **💬 Taller OpenMP - Multiprocessing**
 ^^^
