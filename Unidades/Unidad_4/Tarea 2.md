@@ -1,7 +1,5 @@
 # Tarea 2
 
-Reinel Tabares Soto
-
 :::{note}
 Se premiará la solución correcta con un BONUS en una calificación.
 :::

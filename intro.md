@@ -8,19 +8,7 @@ title: Bienvenida al curso
 ::::{grid}
 :gutter: 3
 
-:::{grid-item-card} Ph.D. Reinel Tabares
-:class-body: text-center
-:class-header: bg-light text-center
 
-```{image} _static/images/rts.png
-:height: 100
-:class: rounded
-```
-^^^
-```{only} html
-[<img src="https://seeklogo.com/images/G/gmail-new-2020-logo-32DBE11BB4-seeklogo.com.png" width="25" height="20">](mailto:reinel.tabares@ucaldas.edu.co)
-```
-:::
 
 :::{grid-item-card} Johan 🍍
 :class-body: text-center
@@ -35,16 +23,16 @@ title: Bienvenida al curso
 ```
 :::
 
-:::{grid-item-card} Brayan Arteaga
+:::{grid-item-card} Mario Bravo
 :class-body: text-center
 :class-header: bg-light text-center
-```{image} _static/images/hba.png
+```{image} _static/images/mbo.jpeg
 :height: 100
 :class: rounded
 ```
 ^^^
 ```{only} html
-[<img src="https://seeklogo.com/images/G/gmail-new-2020-logo-32DBE11BB4-seeklogo.com.png" width="25" height="20">](mailto:harold.arteagaa@autonoma.edu.co)
+[<img src="https://seeklogo.com/images/G/gmail-new-2020-logo-32DBE11BB4-seeklogo.com.png" width="25" height="20">](mailto:mario.bravoo@autonoma.edu.co)
 ```
 :::
 ::::
@@ -67,22 +55,13 @@ title: Bienvenida al curso
 
 Facultad de ingeniería, Ingeniería de Sistemas
 
-**Ph. D. Reinel Tabares Soto**
+**Mgs. Johan Sebastian Piña Duran**
 
-* Ingeniero Electrónico -  Universidad Nacional de Colombia
-* Ingeniero de Sistemas - Universidad de Caldas
-* Magister en Automatización Industrial - Universidad Nacional de Colombia
+* Ingeniero Biomédico -  Universidad Autonoma de Manizales
+* Ingeniero de Electrónico - Universidad Autonoma de Manizales
+* Magister en Bioinformática - Universidad Autonoma de Manizales
 * Especialista en Deep Learning - DeepLearning.AI 
-* Doctor en Ingeniería - Universidad Autónoma de Manizales
-
-% The SVG rendering breaks latex builds for the GitHub badge, so only include in HTML
-
-```{only} html
-[![](https://img.shields.io/github/stars/executablebooks/jupyter-book?style=social)](https://github.com/BioAITeamLearning)
-[<img src="https://w7.pngwing.com/pngs/784/212/png-transparent-google-scholar-hd-logo-thumbnail.png" width="20" height="20">](https://scholar.google.es/citations?user=_8F9RPQAAAAJ&hl=es)
-[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ORCID_iD.svg/2048px-ORCID_iD.svg.png" width="20" height="20">](https://orcid.org/0000-0002-4978-5211)
-[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/ResearchGate_icon_SVG.svg/1200px-ResearchGate_icon_SVG.svg.png" width="20" height="20">](https://www.researchgate.net/profile/Reinel-Tabares-Soto)
-```
+* AI developer - Universidad Adolfo Ibáñez  / consultor
 
 :::
 
@@ -230,8 +209,6 @@ Inteligencia artificial (IA)
 ---
 
 ## Información del curso
-
-- Horarios de clases: Miercoles (2pm a 4pm) y jueves (4pm a 6:30pm)
 - La **dedicación** de tiempo es la base para completar con éxito el curso
 
 
@@ -289,26 +266,6 @@ Estas son algunas de las referencias usadas para este curso.
 
 :::
 
-::::
-
----
-
-## Reglas de Juego 🕹️📏
-
-* Clases magistrales para conceptualización del tema
-* Quices
-* Trabajo en clase y actividades:  Notebooks y repositorios
-* Proyecto Final
-
-
-::::{grid} 1
-
-:::{grid-item}
-:columns: 8
-:class: sd-m-auto
-
-<img src="_static/images/Evaluacion.png" width="600" height="400" />
-:::
 ::::
 
 ---
