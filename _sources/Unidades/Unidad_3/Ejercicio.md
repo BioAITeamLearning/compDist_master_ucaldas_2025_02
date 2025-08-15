@@ -1,7 +1,5 @@
 # Ejercicio
 
-Reinel Tabares Soto
-
 :::{note}
 Este Ejercicio es para realizar en clase, y se premiará la solución correcta con un BONUS en una calificación.
 :::

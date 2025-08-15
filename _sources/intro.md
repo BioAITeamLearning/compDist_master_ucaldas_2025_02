@@ -55,7 +55,7 @@ title: Bienvenida al curso
 
 Facultad de ingeniería, Ingeniería de Sistemas
 
-**Mgs. **
+**Mgs. Johan Sebastian Piña Duran**
 
 * Ingeniero Biomédico -  Universidad Autonoma de Manizales
 * Ingeniero de Electrónico - Universidad Autonoma de Manizales
