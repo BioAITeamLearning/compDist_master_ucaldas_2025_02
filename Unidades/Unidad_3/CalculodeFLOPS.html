@@ -450,8 +450,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-simple">Conversión de números en punto flotante a binario: Precisión simple</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-doble">Conversión de números en punto flotante a binario: Precisión doble</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-tflops">Cálculo de Teraflops (TFlops)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-la-arquitectura-de-la-cpu-gpu">1. Identificar la arquitectura de la CPU/GPU</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)</a></li>
@@ -562,60 +560,6 @@ document.write(`
     <td>Esto se llama binary64.</td>
   </tr>
 </table>
-<section id="conversion-de-numeros-en-punto-flotante-a-binario-precision-simple">
-<h2>Conversión de números en punto flotante a binario: Precisión simple<a class="headerlink" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-simple" title="Link to this heading">#</a></h2>
-<p>Algoritmo para convertir un número flotante a binario:</p>
-<ul class="simple">
-<li><p>Se establece el bit del signo: negativo(1); positivo (0)</p></li>
-<li><p>Convertir la parte entera a binario.</p></li>
-<li><p>Convertir la parte fraccionaria (mantissa) de 23 bits</p></li>
-<li><p>Escribir el número en notación científica</p></li>
-<li><p>Reescribir el estándar IEEE754 32 bits</p></li>
-</ul>
-<img src="../../_static/images/U2_33.jpg"/>
-<p>Vamos a convertir -3.6245 a binario en precisión simple:</p>
-<div class="admonition tip">
-<p class="admonition-title">Truco</p>
-<p><a href="https://www.youtube.com/watch?v=7XvqkAK4Xc8" target="_blank">Representación de números en Coma Flotante | Ejemplo con Binario Periódico</a></p>
-<p><a href="https://www.binaryconvert.com/result_float.html?hexadecimal=C067F7CE" target="_blank">Float (IEEE754 Single precision 32-bit)</a></p>
-</div>
-<p><strong>1.</strong> El signo negativo se representa con un bit <span class="math notranslate nohighlight">\(1_{(2)}\)</span>.</p>
-<img src="../../_static/images/U2_34.jpg"/>
-<p><strong>2.</strong> La parte entera es 3, que se representa <span class="math notranslate nohighlight">\(11_{(2)}\)</span> que se representa con 2 bits.</p>
-<p><strong>3.</strong> Convertimos parte fraccionaria: 0.6245 a binario</p>
-<ul class="simple">
-<li><p>0.6245 x 2 = 1.2490 -&gt; 1</p></li>
-<li><p>0.2490 x 2 = 0.4980 -&gt; 0</p></li>
-<li><p>0.4980 x 2 = 0.9960 -&gt; 0</p></li>
-<li><p>0.9960 x 2 = 1.9920 -&gt; 1</p></li>
-<li><p>0.9920 x 2 = 1.9840 -&gt; 1</p></li>
-<li><p>0.9840 x 2 = 1.9680 -&gt; 1</p></li>
-<li><p>0.9680 x 2 = 1.9360 -&gt; 1</p></li>
-<li><p>0.9360 x 2 = 1.8720 -&gt; 1</p></li>
-<li><p>0.8720 x 2 = 1.7440 -&gt; 1</p></li>
-<li><p>0.7440 x 2 = 1.4880 -&gt; 1   … Hasta tener 23 bits</p></li>
-<li><p>R/ <strong>1 0 0 1 1 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 0 1 <span class="math notranslate nohighlight">\(_{(2)}\)</span></strong></p></li>
-</ul>
-<p><strong>4.</strong> Convertimos el número a notación científica</p>
-<img src="../../_static/images/U2_36.jpg"/>
-<p><strong>5.</strong> Tomamos el exponente y le sumamos 127 del exceso</p>
-<p>127 +1 = 128 = 10000000<span class="math notranslate nohighlight">\(_{(2)}\)</span></p>
-<img src="../../_static/images/U2_37.jpg"/>
-</section>
-<section id="conversion-de-numeros-en-punto-flotante-a-binario-precision-doble">
-<h2>Conversión de números en punto flotante a binario: Precisión doble<a class="headerlink" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-doble" title="Link to this heading">#</a></h2>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Un nuevo ejercicio</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Calcular la representación en precisión doble del mismo número (-3.6245) …</p>
-<img src="../../_static/images/U2_38.jpg"/>
-<p class="sd-card-text">La entrega debe anexarse al final de la entrega del Ejercicio de esta sección.</p>
-</div>
-</details><div class="admonition tip">
-<p class="admonition-title">Truco</p>
-<p><a href="https://www.zator.com/Cpp/E2_2_4a1.htm" target="_blank">Calculadora precisión simple y doble</a></p>
-</div>
-</section>
 <section id="calculo-de-teraflops-tflops">
 <h2>Cálculo de Teraflops (TFlops)<a class="headerlink" href="#calculo-de-teraflops-tflops" title="Link to this heading">#</a></h2>
 <p>Los <strong>FLOPS</strong> (Floating Point Operations Per Second) son una medida del rendimiento de una computadora, y te permiten evaluar la capacidad de procesamiento de operaciones de punto flotante. Para calcular los FLOPS teóricos de una computadora portátil, generalmente puedes seguir los siguientes pasos, dependiendo de los componentes principales de la misma, especialmente la CPU y la GPU:</p>
@@ -880,8 +824,6 @@ La mayoría de las GPUs orientadas a gráficos, como la GTX 1070 Max-Q, tienen u
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-simple">Conversión de números en punto flotante a binario: Precisión simple</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-numeros-en-punto-flotante-a-binario-precision-doble">Conversión de números en punto flotante a binario: Precisión doble</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-teraflops-tflops">Cálculo de Teraflops (TFlops)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-la-arquitectura-de-la-cpu-gpu">1. Identificar la arquitectura de la CPU/GPU</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conseguir-el-numero-de-nucleos-y-la-frecuencia-del-reloj-ghz">2. Conseguir el número de núcleos y la frecuencia del reloj (GHz)</a></li>
