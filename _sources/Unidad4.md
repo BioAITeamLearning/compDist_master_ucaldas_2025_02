@@ -1,7 +1,7 @@
 ---
 title: Unidad 4
 ---
-# Unidad 4: Hilos y Sockets
+# Unidad 4: Hilos
 
 ## Contenido de la unidad
 
@@ -100,51 +100,6 @@ El subprocesamiento del módulo de Python tiene el método **Thread()**:
 * **args**: Esta es la tupla de argumentos que se pasarán a un destino.
 * **kwargs**: Este es el diccionario de argumentos de palabras clave que se utilizarán para la función de destino.
 
-
-## Ambientes de ejecución
-### Configuremos nuestros ambientes locales
-¿Por qué pasarnos a trabajar localmente? ¿Por qué no usar Colab?
-
-<img src="_static/images/U4_5.jpg"/>
-
-- El colab solo tiene dos procesadores.
-- Las salidas de las celdas presentan retrasos, por lo que lo que se escribe no es en tiempo real y eso es crítico para nuestros temas.
-- Los gestores de ambientes y paquetes como Anaconda ayudan a aislar los entornos de desarrollo que se usan para diferentes proyectos.
-- VSC es una herramienta completa para desarrolladores y permite integrar muchos ambientes, diferentes lenguajes y extensiones.
-
-### Instalemos y configuremos
-#### Python
-<img src="_static/images/U4_6.jpg"/>
-
-```{tip}
-<a href="https://docs.anaconda.com/anaconda/install/windows/" target="_blank">Installing on Windows — Anaconda documentation</a>
-```
-
-<img src="_static/images/U4_7.jpg"/>
-
-#### Java
-Hacer la configuración correspondiente para trabajar con Java.
-
-::::{card-carousel} 1
-
-:::{card}
-:margin: 3
-:class-body: text-center
-:class-header: bg-light text-center
-:link: https://github.com/BioAITeamLearning/ProgCD_2023_03_Ucaldas/blob/main/Unidades/Unidad_4/Configuracion-WSL-Notebooks-Java.docx
-
-**💬 Configurar Java**
-^^^
-```{image} https://gcloud.devoteam.com/wp-content/uploads/sites/32/2021/08/Google_Docs_logo_2014-2020.svg.png
-:height: 100
-```
-
-Configuración subsistema Linux y notebooks de java Locales
-+++
-Explore this book {fas}`arrow-right`
-:::
-::::
-
 ## Creación y uso de hilos
 ### Herramienta para los hilos en Python
 
@@ -155,15 +110,6 @@ La forma más sencilla de usar un subproceso es **instanciarlo** con una **funci
 
 Analizar el notebook llamado **Hilos_en_Python.ipynb**
 
-```
-
-### Herramienta para los hilos en Java
-Asegurarse de haber realizado correctamente la configuración del entorno con Java.
-
-```{note}
-**Time code**
-
-Analizar el notebook llamado **HilosJavaBasico.ipynb**
 ```
 <!--
 
