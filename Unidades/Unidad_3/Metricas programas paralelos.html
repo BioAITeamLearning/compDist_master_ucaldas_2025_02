@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Medidas de desempeño &#8212; Programación Concurrente y Distribuida 2025 - 01 Ucaldas</title>
+    <title>Medidas de desempeño &#8212; Programación Distribuida 2025 - 02 Ucaldas</title>
   
   
   
@@ -156,8 +156,8 @@
       
     
     
-    <img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-light" alt="Programación Concurrente y Distribuida 2025 - 01 Ucaldas - Home"/>
-    <script>document.write(`<img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-dark" alt="Programación Concurrente y Distribuida 2025 - 01 Ucaldas - Home"/>`);</script>
+    <img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-light" alt="Programación Distribuida 2025 - 02 Ucaldas - Home"/>
+    <script>document.write(`<img src="https://avatars.githubusercontent.com/u/142033488?s=200&v=4" class="logo__image only-dark" alt="Programación Distribuida 2025 - 02 Ucaldas - Home"/>`);</script>
   
   
 </a></div>
@@ -248,6 +248,11 @@
 <li class="toctree-l2"><a class="reference internal" href="CalculodeFLOPS.html">Precisión Simple Vs Precisión Doble y TFlops</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Medidas de desempeño</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Recursos%20Extra.html">Recursos Extra</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Unidad4.html">Unidad 4: Hilos y Sockets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_5/Hilos_en_Python.html">Hilos en Python</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -487,8 +492,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-aceleraciones">Ejercicio de Aceleraciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-punto-flotante-a-binario-con-precision-simple-y-doble">Conversión de punto flotante a binario con precisión simple y doble.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicio</a></li>
 </ul>
             </nav>
         </div>
@@ -915,69 +918,6 @@ s = f + N(1 - f) = N - fx(N - 1)
 </div>
 </div>
 </section>
-<section id="conversion-de-punto-flotante-a-binario-con-precision-simple-y-doble">
-<h2>Conversión de punto flotante a binario con precisión simple y doble.<a class="headerlink" href="#conversion-de-punto-flotante-a-binario-con-precision-simple-y-doble" title="Link to this heading">#</a></h2>
-<p>Veamos un par de funciones usando librerias para la transformación de flotante a binario.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Conversión a binario en precisión simple.</span>
-<span class="kn">import</span> <span class="nn">struct</span>
-
-<span class="k">def</span> <span class="nf">float_to_binary32</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="c1"># Estructura IEEE 754 para float de 32 bits</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;f&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
-    <span class="c1"># Convierte los 4 bytes a una secuencia binaria de 32 bits</span>
-    <span class="n">bits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">{0:08b}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">bits</span>
-
-
-<span class="n">float_to_binary32</span><span class="p">(</span><span class="o">-</span><span class="mf">3.6245</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11000000011001111111011111001111&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Conversión a binario en precisión doble.</span>
-<span class="kn">import</span> <span class="nn">struct</span>
-
-<span class="k">def</span> <span class="nf">float_to_binary64</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="c1"># Estructura IEEE 754 para float de 64 bits</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;d&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
-    <span class="c1"># Convierte los 8 bytes a una secuencia binaria de 64 bits</span>
-    <span class="n">bits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">{0:08b}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">bits</span>
-
-<span class="n">float_to_binary64</span><span class="p">(</span><span class="o">-</span><span class="mf">3.6245</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1100000000001100111111101111100111011011001000101101000011100101&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id2">
-<h2>Ejercicio<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>Teniendo en cuenta el procedimiento visto en clase para convertir de punto flotante a binario, realice un script que implemente cada uno de los pasos a pedal, sin utilizar funciones como las vistas anteriormente.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### TU CODIGO VA AQUÍ</span>
-
-
-<span class="c1">### HASTA AQUÍ</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1055,8 +995,6 @@ s = f + N(1 - f) = N - fx(N - 1)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-aceleraciones">Ejercicio de Aceleraciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ejercicio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-punto-flotante-a-binario-con-precision-simple-y-doble">Conversión de punto flotante a binario con precisión simple y doble.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicio</a></li>
 </ul>
   </nav></div>
 
@@ -1071,7 +1009,7 @@ s = f + N(1 - f) = N - fx(N - 1)
   <div class="footer-item">
     
 <p class="component-author">
-Por Reinel Tabares, Johan Piña, Brayan Arteaga
+Por Johan Piña, Mario Bravo
 </p>
 
   </div>
