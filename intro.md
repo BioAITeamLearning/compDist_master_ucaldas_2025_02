@@ -122,7 +122,7 @@ Métricas de desempeño
 **Unidad 4 🧵**
 ^^^
 
-Manejo de hilos y sockets
+Manejo de hilos
 :::
 
 :::{grid-item-card}
@@ -133,7 +133,7 @@ Manejo de hilos y sockets
 **Unidad 5 🚦**
 ^^^
 
-Infraestructura de cluster
+Multiprocessing
 :::
 
 :::{grid-item-card}
@@ -144,31 +144,8 @@ Infraestructura de cluster
 **Unidad 6 💻**
 ^^^
 
-
 Concurrencia para desarrollo web
 
-:::
-
-:::{grid-item-card}
-:link: Unidad7
-:link-type: doc
-:class-header: bg-light
-
-**Unidad 7 ⏳**
-^^^
-
-OpenMP
-:::
-
-:::{grid-item-card}
-:link: Unidad8
-:link-type: doc
-:class-header: bg-light
-
-**Unidad 8 ⚡️**
-^^^
-
-Multiprocessing
 :::
 
 :::{grid-item-card}
@@ -176,33 +153,12 @@ Multiprocessing
 :link-type: doc
 :class-header: bg-light
 
-**Unidad 9 🐆**
+**Unidad 7 🐆**
 ^^^
 
 Message Passing Interface (MPI)
 :::
 
-:::{grid-item-card}
-:link: Unidad10
-:link-type: doc
-:class-header: bg-light
-
-**Unidad 10 🔱**
-^^^
-
-Compute Unified Device Architecture (CUDA)
-:::
-
-:::{grid-item-card}
-:link: Unidad10
-:link-type: doc
-:class-header: bg-light
-
-**Unidad 11 🧠**
-^^^
-
-Inteligencia artificial (IA)
-:::
 
 ::::
 

@@ -1,13 +1,51 @@
 ---
 title: Unidad 4
 ---
-# Unidad 4: Hilos y Sockets
+# Unidad 4: Hilos
 
 ## Contenido de la unidad
 
 <img src="_static/images/contenidoU4.png"/>
 
 ## Introducción a Hilos
+
+### Concepto de procesos
+
+#### ¿Cómo funciona a nivel de hardware?
+
+Imagina que la memoria RAM de tu computadora es como una gran pizarra.
+
+Cuando un proceso inicia (por ejemplo, el navegador web), el sistema operativo le asigna un espacio de la memoria en esa pizarra. Este espacio es privado para ese proceso. Se divide en secciones como:
+
+* **Área de Código**: Donde está el programa en sí (las instrucciones que se van a ejecutar).
+
+* **Área de Datos:** Donde se guardan las variables globales.
+
+* **Heap**: Una zona de memoria para variables creadas dinámicamente (por ejemplo, con new en Java o C++).
+
+* **Stack**: Un área de memoria para las variables locales de cada función.
+
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*7OcxF0ZUFinmq14bzqFjYg.png"/>
+
+Ahora, cuando creas un hilo dentro de ese proceso, el sistema operativo no le asigna un nuevo espacio de memoria completo. En su lugar, el nuevo hilo comparte la mayoría de las áreas que ya existen: el código, los datos y el heap.
+
+La única parte que es privada para cada hilo es su propio Stack. En el stack se almacenan las variables locales de las funciones que el hilo está ejecutando.
+
+#### ¿Qué hace el SO?
+
+Aquí es donde entra el concepto de planificación o scheduling del sistema operativo (OS).
+
+El núcleo del procesador es la unidad física que realmente ejecuta las instrucciones. Piensa en él como un operario muy, muy rápido 👷‍♂️. Ese operario solo puede concentrarse en una lista de tareas (un hilo) a la vez.
+
+El **sistema operativo** actúa como el jefe de obra 🧑‍💼. Su trabajo es:
+
+Cargar el hilo en el núcleo: Toma las instrucciones del hilo y se las pasa al núcleo para que las ejecute.
+
+Sacar el hilo del núcleo: Después de un tiempo muy corto (milisegundos), detiene la ejecución de ese hilo y lo guarda, anotando exactamente dónde se quedó.
+
+Cambiar de contexto: Carga otro hilo en el mismo núcleo. Este proceso de guardar y cargar un hilo se llama cambio de contexto (context switch).
+
+El sistema operativo hace esto tan rápido y continuamente que a nosotros, los humanos, nos da la ilusión de que todos los hilos se están ejecutando al mismo tiempo en el mismo núcleo. Esto se conoce como concurrencia. Sin embargo, en un núcleo físico, la ejecución es secuencial, un hilo después del otro.
 
 ### Concepto de hilos (threads)
 
@@ -83,12 +121,14 @@ Un proceso puede constar de varios hilos paralelos, y la creación y gestión de
 <img src="_static/images/U4_3.jpg"/>
 
 ```
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*wax7jfcrYCSDlBBNEbb6QQ.png">
+
+**¿Qué problemas crees que podrían surgir si dos hilos intentan escribir en la misma variable global al mismo tiempo?**
 
 ## La clase Thread y sus métodos principales
 
 ### Herramienta para los hilos en Python
 El subprocesamiento del módulo de Python tiene el método **Thread()**:
-
 
 **class threading.Thread(group=None, target=None, name=None, args=(), kwargs={})**
 
@@ -100,51 +140,6 @@ El subprocesamiento del módulo de Python tiene el método **Thread()**:
 * **args**: Esta es la tupla de argumentos que se pasarán a un destino.
 * **kwargs**: Este es el diccionario de argumentos de palabras clave que se utilizarán para la función de destino.
 
-
-## Ambientes de ejecución
-### Configuremos nuestros ambientes locales
-¿Por qué pasarnos a trabajar localmente? ¿Por qué no usar Colab?
-
-<img src="_static/images/U4_5.jpg"/>
-
-- El colab solo tiene dos procesadores.
-- Las salidas de las celdas presentan retrasos, por lo que lo que se escribe no es en tiempo real y eso es crítico para nuestros temas.
-- Los gestores de ambientes y paquetes como Anaconda ayudan a aislar los entornos de desarrollo que se usan para diferentes proyectos.
-- VSC es una herramienta completa para desarrolladores y permite integrar muchos ambientes, diferentes lenguajes y extensiones.
-
-### Instalemos y configuremos
-#### Python
-<img src="_static/images/U4_6.jpg"/>
-
-```{tip}
-<a href="https://docs.anaconda.com/anaconda/install/windows/" target="_blank">Installing on Windows — Anaconda documentation</a>
-```
-
-<img src="_static/images/U4_7.jpg"/>
-
-#### Java
-Hacer la configuración correspondiente para trabajar con Java.
-
-::::{card-carousel} 1
-
-:::{card}
-:margin: 3
-:class-body: text-center
-:class-header: bg-light text-center
-:link: https://github.com/BioAITeamLearning/ProgCD_2023_03_Ucaldas/blob/main/Unidades/Unidad_4/Configuracion-WSL-Notebooks-Java.docx
-
-**💬 Configurar Java**
-^^^
-```{image} https://gcloud.devoteam.com/wp-content/uploads/sites/32/2021/08/Google_Docs_logo_2014-2020.svg.png
-:height: 100
-```
-
-Configuración subsistema Linux y notebooks de java Locales
-+++
-Explore this book {fas}`arrow-right`
-:::
-::::
-
 ## Creación y uso de hilos
 ### Herramienta para los hilos en Python
 
@@ -155,15 +150,6 @@ La forma más sencilla de usar un subproceso es **instanciarlo** con una **funci
 
 Analizar el notebook llamado **Hilos_en_Python.ipynb**
 
-```
-
-### Herramienta para los hilos en Java
-Asegurarse de haber realizado correctamente la configuración del entorno con Java.
-
-```{note}
-**Time code**
-
-Analizar el notebook llamado **HilosJavaBasico.ipynb**
 ```
 <!--
 
