@@ -251,6 +251,30 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Unidad4.html">Unidad 4: Hilos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Unidad_5/Hilos_en_Python.html">Hilos en Python</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="HilosJavaBasico.html">HilosJavaBasico</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Unidad8.html">Unidad 5: Multiprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/1%20-%20Multiprocessing.html">1 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/2%20-%20Multiprocessing.html">2 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/3%20-%20Multiprocessing.html">3 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/4%20-%20Multiprocessing.html">4 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/5%20-%20Multiprocessing.html">5 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/6%20-%20Multiprocessing.html">6 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/7%20-%20Multiprocessing.html">7 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/8%20-%20Multiprocessing.html">8 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/9%20-%20Multiprocessing.html">9 - Multiprocessing.ipynb</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Unidad_8/10%20-%20Multiprocessing.html">10 - Multiprocessing.ipynb</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -485,11 +509,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-crear-un-hilo-con-temporizador-de-inicio">¿Cómo crear un hilo con temporizador de inicio?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-crear-hilos-ejecutarlos-y-que-el-principal-espere">¿Cómo crear hilos, ejecutarlos y que el principal espere?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-crear-hilos-ejecutarlos-y-que-el-principal-no-espere">¿Cómo crear hilos, ejecutarlos y que el principal no espere?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-implemento-un-hilo-en-una-subclase">¿Cómo implemento un hilo en una subclase?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-1">Caso 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-2">Caso 2</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisemos-el-siguiente-codigo">Revisemos el siguiente código..</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hay-que-tomar-precauciones-al-utilizar-los-hilos">¿Hay que tomar precauciones al utilizar los hilos?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-hago-para-detener-a-los-hilos">¿Cómo hago para detener a los hilos?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iniciar-mis-hilos">Iniciar mis hilos</a></li>
@@ -729,135 +749,48 @@ Termina Hilo 3
 </div>
 </div>
 </section>
-<section id="como-implemento-un-hilo-en-una-subclase">
-<h2>¿Cómo implemento un hilo en una subclase?<a class="headerlink" href="#como-implemento-un-hilo-en-una-subclase" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Definir una nueva subclase de la clase Thread</p></li>
-<li><p>Llamar al constructor de la clase Thread es obligatorio; usándolo, podemos redefinir algunas propiedades del hilo como el nombre del hilo.</p></li>
-<li><p>Sobrecargue el método <em>init</em>_(self [,args]) para agregar argumentos adicionales</p></li>
-<li><p>Luego, debo sobrecargar el método run(self [,args]) para implementar lo que debe hacer el subproceso cuando se inicia</p></li>
-<li><p>En el programa principal, creamos varios objetos del tipo myThread; la ejecución del hilo comienza cuando se llama al método start().</p></li>
-<li><p>El subproceso se coloca en el estado activo de la llamada a start() y permanece allí hasta que finaliza el método run() o lanza una excepción no controlada.</p></li>
-<li><p>El programa finaliza cuando todos los subprocesos finalizan.</p></li>
-</ul>
-<section id="caso-1">
-<h3>Caso 1<a class="headerlink" href="#caso-1" title="Link to this heading">#</a></h3>
+<section id="revisemos-el-siguiente-codigo">
+<h2>Revisemos el siguiente código..<a class="headerlink" href="#revisemos-el-siguiente-codigo" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
 
-<span class="k">class</span> <span class="nc">myThread</span> <span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threadID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">counter</span><span class="p">):</span>
-        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">threadID</span> <span class="o">=</span> <span class="n">threadID</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Iniciando &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-        <span class="n">print_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span>  
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Finalizando &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="c1"># Nuestra variable global</span>
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">incrementar_calculando</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">contador</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+        <span class="c1"># Leemos el valor</span>
+        <span class="n">valor_local</span> <span class="o">=</span> <span class="n">contador</span>
         
-<span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="n">threadName</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">counter</span><span class="p">):</span>
-    <span class="k">while</span> <span class="n">counter</span><span class="p">:</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">threadName</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))))</span> <span class="c1"># Thread-#: HH:MM:SS</span>
-        <span class="n">counter</span> <span class="o">-=</span> <span class="mi">1</span>
-
-<span class="c1"># Crear hilos</span>
-<span class="n">thread1</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Thread-1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Objetos del tipo myThread # Hilo que muestra la hora cada 1 segundo</span>
-<span class="n">thread2</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Thread-2&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Objetos del tipo myThread # Hilo que muestra la hora cada 4 segundos</span>
-
-<span class="c1"># Iniciar los hilos</span>
-<span class="n">thread1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#la ejecución del hilo comienza cuando se llama al método start(). </span>
-<span class="n">thread2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#la ejecución del hilo comienza cuando se llama al método start(). </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando Thread-1
-Iniciando Thread-2
-Thread-1: 08:29:38
-
-Finalizando Thread-1
-Thread-2: 08:29:38
-
-Thread-2: 08:29:43
-
-Thread-2: 08:29:48
-
-Thread-2: 08:29:53
-
-Finalizando Thread-2
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="caso-2">
-<h3>Caso 2<a class="headerlink" href="#caso-2" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="k">class</span> <span class="nc">myThread</span> <span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threadID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">delay</span><span class="p">):</span>
-        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">threadID</span> <span class="o">=</span> <span class="n">threadID</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">delay</span>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Iniciando &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-        <span class="n">print_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">delay</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Finalizando &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="c1"># Aquí sumamos y multiplicamos un valor.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+            <span class="n">valor_local</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span>
         
-<span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="n">threadName</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">counter</span><span class="p">):</span>
-    <span class="k">while</span> <span class="n">counter</span><span class="p">:</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">threadName</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))))</span> <span class="c1"># Thread-#: HH:MM:SS</span>
-        <span class="n">counter</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="c1"># Le sumamos 1, la operación clave</span>
+        <span class="n">valor_local</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="c1"># Escribimos el valor</span>
+        <span class="n">contador</span> <span class="o">=</span> <span class="n">valor_local</span>
 
-<span class="c1"># Crear hilos</span>
-<span class="n">thread1</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Thread-1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Objetos del tipo myThread # Hilo que muestra la hora cada 1 segundo</span>
-<span class="n">thread2</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Thread-2&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Objetos del tipo myThread # Hilo que muestra la hora cada 4 segundos</span>
+<span class="c1"># Creamos dos hilos que ejecutarán la nueva función.</span>
+<span class="n">hilo1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">incrementar_calculando</span><span class="p">)</span>
+<span class="n">hilo2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">incrementar_calculando</span><span class="p">)</span>
 
-<span class="c1"># Iniciar los hilos</span>
-<span class="n">thread1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#la ejecución del hilo comienza cuando se llama al método start(). </span>
-<span class="n">thread2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#la ejecución del hilo comienza cuando se llama al método start(). </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando Thread-1
-Iniciando Thread-2
-Thread-1: 08:32:16
+<span class="c1"># Iniciamos los hilos</span>
+<span class="n">hilo1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">hilo2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-Thread-1: 08:32:17
+<span class="c1"># Esperamos a que ambos hilos terminen</span>
+<span class="n">hilo1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">hilo2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 
-Thread-2: 08:32:18
-
-Thread-1: 08:32:18
-
-Thread-1: 08:32:19
-
-Thread-1: 08:32:20
-
-Finalizando Thread-1
-Thread-2: 08:32:21
-
-Thread-2: 08:32:24
-
-Thread-2: 08:32:27
-
-Thread-2: 08:32:30
-
-Finalizando Thread-2
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El valor final del contador es: </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="hay-que-tomar-precauciones-al-utilizar-los-hilos">
 <h2>¿Hay que tomar precauciones al utilizar los hilos?<a class="headerlink" href="#hay-que-tomar-precauciones-al-utilizar-los-hilos" title="Link to this heading">#</a></h2>
@@ -1004,7 +937,7 @@ Hilo 0 detenido
 </section>
 <section id="sumar-matrices-por-filas-veamoslo">
 <h2>¿Sumar matrices por filas? Veamoslo<a class="headerlink" href="#sumar-matrices-por-filas-veamoslo" title="Link to this heading">#</a></h2>
-<p>Realizaré la suma de las filas de tres matrices, cada una con cuatro filas y diez columnas. Tengo a mi disposición cuatro hilos de procesamiento y utilizaré un hilo para procesar cada conjunto de filas de las tres matrices. El proceso de suma de filas tarda aproximadamente 2 segundos en ejecutarse.</p>
+<p>Vaamos a realizar la suma de las filas de tres matrices, cada una con cuatro filas y diez columnas. Si tenemos a disposición cuatro hilos de procesamiento y usaré un hilo para procesar cada conjunto de filas de las tres matrices. El proceso de suma de filas tarda aproximadamente 2 segundos en ejecutarse.</p>
 <section id="hilo-por-hilo">
 <h3>¿Hilo por hilo? 😒<a class="headerlink" href="#hilo-por-hilo" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -1314,11 +1247,7 @@ Result Matrix:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-crear-un-hilo-con-temporizador-de-inicio">¿Cómo crear un hilo con temporizador de inicio?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-crear-hilos-ejecutarlos-y-que-el-principal-espere">¿Cómo crear hilos, ejecutarlos y que el principal espere?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-crear-hilos-ejecutarlos-y-que-el-principal-no-espere">¿Cómo crear hilos, ejecutarlos y que el principal no espere?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-implemento-un-hilo-en-una-subclase">¿Cómo implemento un hilo en una subclase?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-1">Caso 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-2">Caso 2</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisemos-el-siguiente-codigo">Revisemos el siguiente código..</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hay-que-tomar-precauciones-al-utilizar-los-hilos">¿Hay que tomar precauciones al utilizar los hilos?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-hago-para-detener-a-los-hilos">¿Cómo hago para detener a los hilos?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iniciar-mis-hilos">Iniciar mis hilos</a></li>

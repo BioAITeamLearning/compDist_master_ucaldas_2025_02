@@ -1,7 +1,7 @@
 ---
-title: Unidad 8
+title: Unidad 5
 ---
-# Unidad 8: Multiprocessing
+# Unidad 5: Multiprocessing
 
 ## Contenido de la unidad
 
@@ -188,10 +188,4 @@ O ver el Notebook "Multiprocessing.ipynb"
 
 ```{tip}
 <a href="https://drive.google.com/drive/folders/1A9hBa-Y3RGE50ZrSguDQNc3xz_IJQjo8?usp=sharing" target="_blank">Acceder a Python files</a>
-```
-
-## Taller y Quiz
-
-```{tip}
-Ver la subsección **Evaluemos lo aprendido!!**
-```
+``
