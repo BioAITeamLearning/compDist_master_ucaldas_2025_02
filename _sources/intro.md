@@ -159,6 +159,16 @@ Concurrencia para desarrollo web
 Message Passing Interface (MPI)
 :::
 
+:::{grid-item-card}
+:link: Unidad10
+:link-type: doc
+:class-header: bg-light
+
+**Unidad 10 🚀**
+^^^
+
+Cuda y PyCuda
+:::
 
 ::::
 
